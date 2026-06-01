@@ -1,1 +1,14 @@
 concept,model,run_id,output,mean_token_entropy,self_perplexity,ngram_novelty,type_token_ratio,centroid_distance
+time,gpt2,1,"Write a metaphor about time:  It's impossible to put all of those things into one time, but let's take a look at the first two.
+1. Time is an important concept  and it's important to",4.0125,13.5527,,,
+time,gpt2,2,"Write a metaphor about time:  We are in the middle of a long, slow, and dangerous journey, and I am not sure what could be done about it. I do not know how to be good at that, but",4.0856,12.729,,,
+memory,gpt2,1,"Write a metaphor about memory:  If you have a memory of something that you want to write, then you have to write it. If you don't have a memory, you can write it. If you have a memory,",3.2391,7.2296,,,
+memory,gpt2,2,"Write a metaphor about memory:  It's not just that we know what our memory is, but that it's that we can create memory objects and reuse them.  This is how we do it.
+A Memory Object",4.0278,14.9718,,,
+love,gpt2,1,"Write a metaphor about love:  Love is love for all people, except for those who have wronged you. Love is love for any people except for those who have wronged you.  Love is love for anyone who loves",3.1405,8.887,,,
+love,gpt2,2,Write a metaphor about love:  The love and love of others is as deep as the love and love of love.  It is an expression of both the person's love to their neighbor as well as the desire to help them,3.7632,15.8691,,,
+death,gpt2,1,"Write a metaphor about death:  It's not that we don't like death, it's that we don't like what death is. It's a bad thing, it's a bad thing to do.
+I have to",3.4512,9.1868,,,
+death,gpt2,2,Write a metaphor about death:  A person who has never been to war but is dying is being told that he or she is dead.  An addict who has never been addicted to drugs but is in love with drugs.,3.8194,15.0282,,,
+knowledge,gpt2,1,"Write a metaphor about knowledge:  When we look at the world and think about it, we tend to lose many aspects of it. We lose what we think about and what we imagine. When we look at the world and think",3.4338,11.4153,,,
+knowledge,gpt2,2,"Write a metaphor about knowledge:  In the United States, you might think that information is more valuable than words.  You might think that information is more valuable than words.  However, you could be wrong. ",3.1961,8.6092,,,
