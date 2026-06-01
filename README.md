@@ -45,7 +45,8 @@ llm-originality-probe/
 ├── requirements.txt
 └── README.md
 ```
-
+## View Analysis Notebook
+ [View pilot analysis on nbviewer](https://nbviewer.org/github/ridhi-png/llm-originality-probe/blob/main/notebooks/analysis.ipynb)
 ## Status
 
 - [x] Repo setup + experimental design
