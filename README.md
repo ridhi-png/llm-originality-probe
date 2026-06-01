@@ -3,62 +3,51 @@
 > Probing internal model signals as proxies for human-rated originality in LLM-generated text.
 
 ## Research Question
-
-Do internal model signals — token entropy, self-perplexity, n-gram novelty, semantic centroid distance — correlate with how humans rate the originality of generated text?
-
-This directly addresses an open question in AI creativity research: **are LLMs structurally blind to their own unoriginality?**
+Do internal model signals — token entropy, self-perplexity, 
+n-gram novelty, semantic centroid distance — correlate with 
+human-rated originality of generated text?
 
 ## Hypothesis
+Low self-perplexity outputs ("safe" generations) are rated 
+less original by humans — suggesting LLMs are structurally 
+blind to their own unoriginality.
 
-Low self-perplexity outputs ("safe" generations) will be rated less original by humans — meaning a model's internal confidence signal is inversely related to perceived creativity.
+## Experimental Design
+- **Models:** GPT-2-XL, Mistral-7B-Instruct
+- **Task:** Metaphor generation across 20 domain concepts
+- **Outputs:** 400 total (20 concepts × 10 outputs × 2 models)
+- **Signals measured:** mean token entropy, self-perplexity, 
+  3-gram novelty (vs Wikipedia), type-token ratio, semantic centroid distance
+- **Human annotation:** 5 raters, Krippendorff's α for agreement scoring
 
-## Experiment Design
+## Current Status
+- [x] Experimental design finalized
+- [x] Generation pipeline built (GPT-2)
+- [x] Pilot outputs generated — 10 outputs across 5 concepts
+- [x] Signal extraction complete — entropy + perplexity on pilot set
+- [x] Pilot human annotation complete — originality ratings collected
+- [x] Pilot correlation analysis run — negative correlation observed
+- [ ] Scaling to full dataset — 400 outputs, 20 concepts, 2 models
+- [ ] N-gram novelty + centroid distance signals — in progress
+- [ ] Full human annotation — 5 raters pending
+- [ ] Krippendorff's α computation — pending full annotation
 
-- **Task:** Metaphor generation — "Explain [CONCEPT] using a metaphor"
-- **Concepts:** 20 domain concepts (gravity, democracy, memory, rust, loneliness...)
-- **Models:** GPT-2-XL (local, HuggingFace) + Mistral-7B-Instruct (Together.ai API)
-- **Outputs:** 10 per concept per model = 400 total generated texts
-- **Signals extracted per output:**
-  1. Mean token entropy
-  2. Self-perplexity
-  3. 3-gram novelty vs Wikipedia corpus
-  4. Type-token ratio (TTR)
-  5. Semantic centroid distance
-- **Ground truth:** Human originality ratings (1–5 scale, 5 raters, Krippendorff's α)
+## Pilot Results (10 outputs, single rater)
+| Signal | Correlation with Human Originality |
+|--------|-----------------------------------|
+| mean_token_entropy | -0.24 |
+| self_perplexity | -0.14 |
 
-## Structure
+> Early pilot suggests a weak negative correlation — 
+> higher entropy/perplexity does not strongly predict 
+> human-rated originality at this scale. 
+> Full dataset needed before drawing conclusions.
 
-```
-llm-originality-probe/
-├── scripts/
-│   ├── generate_outputs.py       # Generate metaphors from both models
-│   ├── extract_signals.py        # Compute all 5 internal signals
-│   └── annotate_prep.py          # Prepare Google Form annotation sheet
-├── notebooks/
-│   └── analysis.ipynb            # Correlation analysis + plots
-├── data/
-│   ├── concepts.txt              # 20 prompt concepts
-│   ├── generated_outputs.csv     # All 400 generated texts (populated by script)
-│   └── human_ratings.csv         # Annotator ratings (populated after annotation)
-├── signals/
-│   └── signal_matrix.csv         # All 5 signals per output (populated by script)
-├── requirements.txt
-└── README.md
-```
-## View Analysis Notebook
- [View pilot analysis on nbviewer](https://nbviewer.org/github/ridhi-png/llm-originality-probe/blob/main/notebooks/analysis.ipynb)
-## Status
-
-- [x] Repo setup + experimental design
-- [ ] Output generation (Week 1)
-- [ ] Signal extraction (Week 2)
-- [ ] Human annotation (Week 3)
-- [ ] Analysis + write-up (Week 4-5)
+## View Analysis
+📊 [View pilot analysis notebook on nbviewer](https://nbviewer.org/github/ridhi-png/llm-originality-probe/blob/main/notebooks/analysis.ipynb)
 
 ## Stack
+Python, HuggingFace Transformers, Sentence-Transformers, 
+Mistral-7B-Instruct, GPT-2, NLTK, NumPy, Pandas, Matplotlib
 
-Python · HuggingFace Transformers · GPT-2-XL · Mistral-7B-Instruct · Together.ai API · Sentence-Transformers · Krippendorff's α
-
-## Author
-
-Ridhi Arora — IIT Jodhpur (BS AI/DS, 2025–2029)
+## Repository Structure
