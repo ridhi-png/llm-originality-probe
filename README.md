@@ -44,7 +44,7 @@ blind to their own unoriginality.
 > Full dataset needed before drawing conclusions.
 
 ## View Analysis
-📊 [View pilot analysis notebook on nbviewer](https://nbviewer.org/github/ridhi-png/llm-originality-probe/blob/main/notebooks/analysis.ipynb)
+📊 [View pilot analysis notebook ](https://colab.research.google.com/drive/1K8qOmFG4BgimSzlYLyZjNjOdbxfYw4rB?usp=sharing)
 
 ## Stack
 Python, HuggingFace Transformers, Sentence-Transformers, 
