@@ -51,3 +51,22 @@ Python, HuggingFace Transformers, Sentence-Transformers,
 Mistral-7B-Instruct, GPT-2, NLTK, NumPy, Pandas, Matplotlib
 
 ## Repository Structure
+
+    llm-originality-probe/
+    ├── data/
+    │   ├── concepts.txt              # 20 domain concepts
+    │   ├── generated_outputs.csv     # model outputs (pilot: 10 rows)
+    │   └── human_ratings.csv         # originality ratings (pilot: single rater)
+    ├── scripts/
+    │   ├── generate_outputs.py       # generation pipeline
+    │   ├── extract_signals.py        # signal extraction
+    │   └── annotate_prep.py          # annotation preparation
+    ├── signals/
+    │   └── signal_matrix.csv         # computed signals per output
+    ├── notebooks/
+    │   └── analysis.ipynb            # correlation analysis + pilot results
+    └── requirements.txt
+  ## Citation
+If you use this work, please cite:  
+Arora, R. (2026). Do LLMs Know When They're Being Unoriginal?  
+IIT Jodhpur. github.com/ridhi-png/llm-originality-probe
